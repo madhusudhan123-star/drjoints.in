@@ -374,16 +374,16 @@ const Checkout = ({ translations, currentLang }) => {
             <div className="max-w-2xl mx-auto px-4 py-16 text-center">
                 <div className="bg-green-50 rounded-lg p-8 border border-green-200">
                     <h2 className="text-3xl font-bold text-green-600 mb-4">
-                        Order Placed Successfully!
+                        {translations[currentLang].checkout.successfully}
                     </h2>
                     <p className="text-gray-600 mb-6">
-                        Thank you for your purchase. You will receive a confirmation email shortly.
+                        {translations[currentLang].checkout.thank}
                     </p>
                     <button
                         onClick={() => navigate('/')}
                         className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
                     >
-                        Continue Shopping
+                        {translations[currentLang].checkout.continue}
                     </button>
                 </div>
             </div>

@@ -287,6 +287,10 @@ const translations = {
       product: "Product",
       order: "Place Order",
       processing: "Processing...",
+      successfully: "Order Placed Successfully!",
+      thank: "Thank you for your purchase. You will receive a confirmation email shortly.",
+      continue: "Continue Shopping"
+
 
     },
     features: [
@@ -560,7 +564,10 @@ const translations = {
       subtotal: "المجموع الفرعي",
       product: "المنتج",
       order: "إتمام الطلب",
-      processing: "جاري المعالجة..."
+      processing: "جاري المعالجة...",
+      successfully: "تم تقديم الطلب بنجاح!",
+      thank: "شكرًا لشرائك. ستتلقى بريدًا إلكترونيًا للتأكيد قريبًا.",
+      continue: "مواصلة التسوق"
     },
     features: [
       {
