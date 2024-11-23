@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Shield, Leaf, Brain, Hand } from 'lucide-react';
 import product from '../assets/product.png';
 import product1 from '../assets/product1.jpeg';
 import product2 from '../assets/product2.png';
@@ -24,28 +23,6 @@ const Product = ({ translations, currentLang }) => {
 
     const productImages = [product, product1, product2, product];
 
-    const features = [
-        {
-            icon: Brain,
-            title: "Effective Pain Relief",
-            color: "text-blue-500"
-        },
-        {
-            icon: Leaf,
-            title: "Natural Ingredients",
-            color: "text-green-500"
-        },
-        {
-            icon: Hand,
-            title: "Promotes Recovery",
-            color: "text-orange-500"
-        },
-        {
-            icon: Shield,
-            title: "Convenient And Easy To Use",
-            color: "text-purple-500"
-        }
-    ];
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12">
@@ -116,7 +93,7 @@ const Product = ({ translations, currentLang }) => {
 
                     {/* Features List */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                        {features.map((feature, index) => (
+                        {translations[currentLang].features.map((feature, index) => (
                             <div key={index} className="flex items-center gap-3">
                                 <div className={`p-2 rounded-full bg-gray-100 ${feature.color}`}>
                                     <feature.icon className="w-6 h-6" />

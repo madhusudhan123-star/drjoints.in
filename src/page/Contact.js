@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Contact = ({ translations, currentLang }) => {
-    const handleSubmit = (e) => {
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission logic here
+        const form = e.target;
+
+        try {
+            const response = await fetch("https://formspree.io/f/xkgnvwbq", {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
     };
 
     return (
@@ -14,43 +35,66 @@ const Contact = ({ translations, currentLang }) => {
                 <h2 className="text-2xl font-medium text-olive-700 mb-2">{translations[currentLang].contact.pagetitle}</h2>
                 <p className="text-gray-600 mb-8">{translations[currentLang].contact.pagesectitle}</p>
 
+                {status === 'success' && (
+                    <div className="mb-4 p-4 bg-green-50 text-green-700 rounded-lg">
+                        Thank you for your message. We'll get back to you soon!
+                    </div>
+                )}
+
+                {status === 'error' && (
+                    <div className="mb-4 p-4 bg-red-50 text-red-700 rounded-lg">
+                        There was an error sending your message. Please try again.
+                    </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
                         type="text"
+                        name="name"
                         placeholder={translations[currentLang].contact.pageinname}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
 
                     <input
                         type="email"
+                        name="email"
                         placeholder={translations[currentLang].contact.pageinemail}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
 
                     <input
                         type="tel"
+                        name="phone"
                         placeholder={translations[currentLang].contact.pageinphone}
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
 
                     <input
                         type="text"
+                        name="subject"
                         placeholder={translations[currentLang].contact.pageinsubject}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
 
                     <textarea
+                        name="message"
                         placeholder={translations[currentLang].contact.pageinmessage}
                         rows={4}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
 
                     <button
                         type="submit"
-                        className="px-8 py-2 bg-white text-green-600 border border-green-600 rounded-full hover:bg-green-50 transition-colors"
+                        disabled={status === 'submitting'}
+                        className="px-8 py-2 bg-white text-green-600 border border-green-600 rounded-full hover:bg-green-50 transition-colors disabled:opacity-50"
                     >
-                        {translations[currentLang].contact.pagesubbutton}
-                        Send Message
+                        {status === 'submitting'
+                            ? 'Sending...'
+                            : translations[currentLang].contact.pagesubbutton}
                     </button>
                 </form>
             </div>
@@ -95,7 +139,6 @@ const Contact = ({ translations, currentLang }) => {
                         title="Google Map"
                     ></iframe>
                 </div>
-
             </div>
         </div>
     );

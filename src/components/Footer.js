@@ -9,12 +9,12 @@ const Footer = ({ currentLang, translations }) => {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div>
                     <img src={logo} alt="Dr. Joints Logo" className="w-32" />
-                    <p className="mt-4 text-gray-400">100% Natural</p>
+                    <p className="mt-4 text-gray-400">{translations[currentLang].nav.natural} </p>
                     <div className="flex space-x-4 mt-4">
-                        <a href="#" className="text-gray-400 hover:text-white">
+                        <a href="https://www.facebook.com/people/Israelites-Shopping-Network-Private-Limited/61563169873500/" className="text-gray-400 hover:text-white">
                             <Facebook size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-white">
+                        <a href="https://www.instagram.com/drjointsofficial/" className="text-gray-400 hover:text-white">
                             <Instagram size={20} />
                         </a>
                     </div>
@@ -45,9 +45,7 @@ const Footer = ({ currentLang, translations }) => {
                     </ul>
                 </div>
             </div>
-            <div className="mt-8 text-center text-gray-400">
-                &copy; 2024. All Rights Reserved By Dr.Joints
-            </div>
+            <div className="mt-8 text-center text-gray-400">{translations[currentLang].nav.lastone}</div>
         </footer>
     );
 };

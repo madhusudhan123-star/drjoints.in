@@ -30,7 +30,9 @@ const Navbar = ({ currentLang, setCurrentLang, translations, languages }) => {
                 <div className="flex justify-between items-center h-16 sm:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <img src={logo} alt="Dr. Joints Logo" className="h-8 sm:h-12 md:h-16" />
+                        <a href='/'>
+                            <img src={logo} alt="Dr. Joints Logo" className="h-8 sm:h-12 md:h-16" />
+                        </a>
                     </div>
 
                     {/* Desktop Navigation */}

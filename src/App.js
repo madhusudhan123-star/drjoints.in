@@ -6,6 +6,7 @@ import Return from './page/Return';
 import Privacy from './page/Privacy';
 import Contact from './page/Contact';
 import { BrowserRouter, Routes, Route } from 'react-router';
+import { Shield, Leaf, Brain, Hand } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import review from './assets/review.jpg';
@@ -36,6 +37,8 @@ const translations = {
       contactUs: 'Contact Us',
       contactUslink: '/contact',
       terms: "Terms & Conditions",
+      natural: "100% Natural",
+      lastone: "© 2024. All Rights Reserved By Dr.Joints",
     },
     hero: {
       title: 'Best Pain Relief Oil For Muscles',
@@ -276,9 +279,38 @@ const translations = {
       phone: "Phone ",
       email: "Email Address ",
       order: "Your Order",
-      clientaddress: "Apartment, suite, unit, etc. (optional)",
+      clientaddress: "Apartment/Suite",
+      mode: "Payment Mode",
+      total: "Total",
+      shipping: "Shipping",
+      subtotal: "Subtotal",
+      product: "Product",
+      order: "Place Order",
+      processing: "Processing...",
 
-    }
+    },
+    features: [
+      {
+        icon: Brain,
+        title: "Effective Pain Relief",
+        color: "text-blue-500"
+      },
+      {
+        icon: Leaf,
+        title: "Natural Ingredients",
+        color: "text-green-500"
+      },
+      {
+        icon: Hand,
+        title: "Promotes Recovery",
+        color: "text-orange-500"
+      },
+      {
+        icon: Shield,
+        title: "Convenient And Easy To Use",
+        color: "text-purple-500"
+      }
+    ],
   },
   ar: {
     nav: {
@@ -295,6 +327,8 @@ const translations = {
       contactUs: 'اتصل بنا',
       contactUslink: '/contact',
       terms: "الشروط والأحكام",
+      natural: "100% طبيعي",
+      lastone: "© 2024. جميع الحقوق محفوظة من قبل د.جونتس",
     },
     hero: {
       title: 'أفضل زيت لتخفيف آلام العضلات',
@@ -509,17 +543,48 @@ const translations = {
     },
     checkout: {
       title: "الدفع",
-      sectitle: "تفاصيل الفواتير",
+      sectitle: "تفاصيل الفوترة",
       firstname: 'الاسم الأول',
-      lastname: 'اسم العائلة',
-      country: 'البلد/ المنطقة',
+      lastname: 'الاسم الأخير',
+      country: 'البلد/المنطقة',
       address: 'عنوان الشارع',
-      city: 'المدينة/ البلدة',
+      city: 'المدينة/البلدة',
       countrytitle: "البلد",
-      phone: "رقم الهاتف",
+      phone: "الهاتف",
       email: "عنوان البريد الإلكتروني",
       order: "طلبك",
-    }
+      clientaddress: "الشقة/الجناح",
+      mode: "طريقة الدفع",
+      total: "الإجمالي",
+      shipping: "الشحن",
+      subtotal: "المجموع الفرعي",
+      product: "المنتج",
+      order: "إتمام الطلب",
+      processing: "جاري المعالجة..."
+    },
+    features: [
+      {
+        icon: Brain,
+        title: "تخفيف الألم الفعال",
+        color: "text-blue-500"
+      },
+      {
+        icon: Leaf,
+        title: "مكونات طبيعية",
+        color: "text-green-500"
+      },
+      {
+        icon: Hand,
+        title: "يعزز التعافي",
+        color: "text-orange-500"
+      },
+      {
+        icon: Shield,
+        title: "مريح وسهل الاستخدام",
+        color: "text-purple-500"
+      }
+    ],
+
   }
 };
 
@@ -543,7 +608,7 @@ const App = () => {
     localStorage.setItem('preferredLanguage', currentLang);
 
     // // Optional: Set document dir attribute for RTL support
-    // document.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
     // Optional: Set lang attribute on html element
     document.documentElement.lang = currentLang;

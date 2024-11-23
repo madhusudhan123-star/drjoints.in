@@ -47,7 +47,7 @@ const Hero = () => {
                         <img
                             src={image.url}
                             alt={image.alt}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full"
                         />
                     </div>
                 ))}
