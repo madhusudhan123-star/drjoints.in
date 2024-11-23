@@ -206,7 +206,7 @@ const Checkout = ({ translations, currentLang }) => {
     );
     const handleRazorpayPayment = () => {
         const options = {
-            key: 'rzp_test_F6GXWBDqd3tcjg',
+            key: 'rzp_live_tGJjXr7rvi6keg',
             amount: orderDetails.totalAmount * 100,
             currency: currentCurrency.currency,
             name: 'Your Company Name',
