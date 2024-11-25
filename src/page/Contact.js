@@ -9,7 +9,7 @@ const Contact = ({ translations, currentLang }) => {
         const form = e.target;
 
         try {
-            const response = await fetch("https://formspree.io/f/xkgnvwbq", {
+            const response = await fetch("https://formspree.io/f/mvgobdev", {
                 method: "POST",
                 body: new FormData(form),
                 headers: {
