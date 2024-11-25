@@ -8,7 +8,7 @@ const Product = ({ translations, currentLang }) => {
     const navigate = useNavigate();
     const [quantity, setQuantity] = useState(1);
     const [selectedImage, setSelectedImage] = useState(0);
-    const productPrice = 4990; // Base price per unit
+    const productPrice = 6990; // Base price per unit
 
     const handleCheckout = () => {
         navigate('/checkout', {

@@ -30,18 +30,18 @@ const translations = {
       aboutUs: 'About Us',
       aboutUslink: '/about',
       product: 'Product',
-      productlink: '/products',
+      productlink: '/product',
       returnPolicy: 'Return Policy',
-      returnPolicylink: '/returns',
+      returnPolicylink: '/return',
       privacyPolicy: 'Privacy Policy',
-      privacyPolicylink: '/privacys',
+      privacyPolicylink: '/privacy',
       contactUs: 'Contact Us',
       contactUslink: '/contact',
       terms: "Terms & Conditions",
       natural: "100% Natural",
       lastone: "© 2024. All Rights Reserved By Dr.Joints",
       terms: "Terms & Conditions",
-      termslink: '/termss'
+      termslink: '/terms'
     },
     hero: {
       title: 'Best Pain Relief Oil For Muscles',
@@ -690,12 +690,12 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home currentLang={currentLang} translations={translations} />} />
           <Route path='/about' element={<About currentLang={currentLang} translations={translations} />} />
-          <Route path='/products' element={<Product currentLang={currentLang} translations={translations} />} />
-          <Route path='/returns' element={<Return currentLang={currentLang} translations={translations} />} />
-          <Route path='/privacys' element={<Privacy currentLang={currentLang} translations={translations} />} />
+          <Route path='/product' element={<Product currentLang={currentLang} translations={translations} />} />
+          <Route path='/return' element={<Return currentLang={currentLang} translations={translations} />} />
+          <Route path='/privacy' element={<Privacy currentLang={currentLang} translations={translations} />} />
           <Route path='/contact' element={<Contact currentLang={currentLang} translations={translations} />} />
-          <Route path='/checkouts' element={<Checkout currentLang={currentLang} translations={translations} />} />
-          <Route path='/termss' element={<TermsAndConditions currentLang={currentLang} translations={translations} />} />
+          <Route path='/checkout' element={<Checkout currentLang={currentLang} translations={translations} />} />
+          <Route path='/terms' element={<TermsAndConditions currentLang={currentLang} translations={translations} />} />
         </Routes>
         <Footer currentLang={currentLang} translations={translations} />
       </BrowserRouter>
