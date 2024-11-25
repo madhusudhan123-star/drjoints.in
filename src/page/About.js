@@ -63,7 +63,7 @@ const About = ({ currentLang, translations }) => {
                     </div>
                 </div>
             </div>
-            <div className='pb-20 bg-[#F0E7E5]'>
+            <div className=' bg-[#F0E7E5]'>
                 <FAQ currentLang={currentLang} translations={translations} />
             </div>
         </div>

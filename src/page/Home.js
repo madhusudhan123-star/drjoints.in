@@ -93,7 +93,7 @@ const ProductSection = () => {
     ];
 
     return (
-        <div className="w-full py-6 mt-20 mb-48">
+        <div className="w-full py-6 mt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-20">
                 {cards.map((card) => (
                     <div
@@ -110,7 +110,6 @@ const ProductSection = () => {
                     </div>
                 ))}
             </div>
-            <div className='w-full h-[1px] bg-black mt-36'></div>
         </div>
     );
 };

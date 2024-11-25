@@ -8,7 +8,9 @@ const Footer = ({ currentLang, translations }) => {
         <footer className="bg-gray-900 text-white py-8">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div>
-                    <img src={logo} alt="Dr. Joints Logo" className="w-32" />
+                    <a href={translations[currentLang].nav.homelink || "#"}>
+                        <img src={logo} alt="Dr. Joints Logo" className="w-32" />
+                    </a>
                     <p className="mt-4 text-gray-400">{translations[currentLang].nav.natural} </p>
                     <div className="flex space-x-4 mt-4">
                         <a href="https://www.facebook.com/people/Israelites-Shopping-Network-Private-Limited/61563169873500/" className="text-gray-400 hover:text-white">
@@ -42,6 +44,7 @@ const Footer = ({ currentLang, translations }) => {
                     <ul className="space-y-2">
                         <li><a href={translations[currentLang].nav.returnPolicylink} className="text-gray-400 hover:text-white">{translations[currentLang].nav.returnPolicy}</a></li>
                         <li><a href={translations[currentLang].nav.privacyPolicylink} className="text-gray-400 hover:text-white">{translations[currentLang].nav.privacyPolicy}</a></li>
+                        <li><a href={translations[currentLang].nav.termslink} className="text-gray-400 hover:text-white">{translations[currentLang].nav.terms}</a></li>
                     </ul>
                 </div>
             </div>

@@ -13,6 +13,7 @@ import review from './assets/review.jpg';
 import review1 from './assets/review1.jpg';
 import about from './assets/about.jpg';
 import Checkout from './page/Checkout';
+import TermsAndConditions from './page/Terms';
 
 // Language options
 const languages = [
@@ -25,7 +26,7 @@ const translations = {
   en: {
     nav: {
       home: 'Home',
-      homelink: '/',
+      homelink: '/index-2.html',
       aboutUs: 'About Us',
       aboutUslink: '/about',
       product: 'Product',
@@ -39,6 +40,8 @@ const translations = {
       terms: "Terms & Conditions",
       natural: "100% Natural",
       lastone: "© 2024. All Rights Reserved By Dr.Joints",
+      terms: "Terms & Conditions",
+      termslink: '/terms'
     },
     hero: {
       title: 'Best Pain Relief Oil For Muscles',
@@ -315,6 +318,65 @@ const translations = {
         color: "text-purple-500"
       }
     ],
+    termsData: {
+      title: "Terms & Conditions",
+      sections: [
+        {
+          title: "Acceptance of Terms",
+          content: "By downloading, installing, or using the Genius-Baby ('the App'), you agree to be bound by these Terms and Conditions ('Terms'). If you do not agree to these Terms, do not use the App."
+        },
+        {
+          title: "License",
+          content: "Genius-Baby grants you a limited, non-exclusive, non-transferable, and revocable license to use the App for personal, non-commercial purposes, subject to these Terms."
+        },
+        {
+          title: "User Obligations",
+          content: [
+            "You must be at least 18 years old to use the App.",
+            "You agree to use the App only for lawful purposes and in accordance with these Terms.",
+            "You must not attempt to interfere with the App's operation or security."
+          ]
+        },
+        {
+          title: "Intellectual Property",
+          content: "All content, features, and functionality (including but not limited to text, graphics, logos, and software) are owned by Genius-Baby or its licensors and are protected by copyright and other laws. You agree not to reproduce, duplicate, copy, sell, resell, or exploit any part of the App without our express written permission."
+        },
+        {
+          title: "User-Generated Content",
+          content: "You may be able to submit, upload, or otherwise make available content (such as playlists or reviews) through the App. By doing so, you grant Genius-Baby a worldwide, royalty-free, perpetual, irrevocable, non-exclusive, and sublicensable right to use, modify, distribute, and display such content in connection with the App."
+        },
+        {
+          title: "Privacy",
+          content: "Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your information."
+        },
+        {
+          title: "Termination",
+          content: "We reserve the right to terminate or suspend your access to the App at any time, with or without notice, for any reason, including if you breach these Terms."
+        },
+        {
+          title: "Limitation of Liability",
+          content: [
+            "To the fullest extent permitted by law, Genius-Baby App and its affiliates, officers, directors, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:",
+            "- Your use or inability to use the App;",
+            "- Any unauthorized access to or use of our servers and/or any personal information stored therein;",
+            "- Any bugs, viruses, or the like that may be transmitted to or through the App by any third party;",
+            "- Any errors or omissions in any content."
+          ]
+        },
+        {
+          title: "Changes to Terms",
+          content: "We may modify these Terms from time to time. We will notify you of any changes by posting the new Terms on the App. Your continued use of the App after the changes are made will constitute your acceptance of the new Terms."
+        },
+        {
+          title: "Governing Law",
+          content: "These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions."
+        },
+        {
+          title: "Contact Information",
+          content: "If you have any questions about these Terms, please contact us at srilogishyd@gmail.com."
+        }
+      ]
+    },
   },
   ar: {
     nav: {
@@ -626,13 +688,14 @@ const App = () => {
       <BrowserRouter>
         <Navbar currentLang={currentLang} setCurrentLang={setCurrentLang} translations={translations} languages={languages} />
         <Routes>
-          <Route path='/' element={<Home currentLang={currentLang} translations={translations} />} />
+          <Route path='/index-2.html' element={<Home currentLang={currentLang} translations={translations} />} />
           <Route path='/about' element={<About currentLang={currentLang} translations={translations} />} />
           <Route path='/product' element={<Product currentLang={currentLang} translations={translations} />} />
           <Route path='/return' element={<Return currentLang={currentLang} translations={translations} />} />
           <Route path='/privacy' element={<Privacy currentLang={currentLang} translations={translations} />} />
           <Route path='/contact' element={<Contact currentLang={currentLang} translations={translations} />} />
           <Route path='/checkout' element={<Checkout currentLang={currentLang} translations={translations} />} />
+          <Route path='/terms' element={<TermsAndConditions currentLang={currentLang} translations={translations} />} />
         </Routes>
         <Footer currentLang={currentLang} translations={translations} />
       </BrowserRouter>
